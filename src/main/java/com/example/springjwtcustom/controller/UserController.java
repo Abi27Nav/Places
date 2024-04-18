@@ -27,42 +27,42 @@ public class UserController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @GetMapping("/welcome")
-    public String welcome(){
-        return "This is welcome page endpoint";
-    }
+//    @GetMapping("/welcome")
+//    public String welcome(){
+//        return "This is welcome page endpoint";
+//    }
 
     @PostMapping("/register")
     public String addNewUser(@RequestBody UserInfo userInfo){
         return service.addUser(userInfo);
     }
-
-    @GetMapping("/user/userProfile")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
-    public String userProfile(){
-        return "WElcome to the profile, user";
-    }
-    @GetMapping("/admin/adminProfile")
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    public String adminProfile(){
-        return "Welcome to the profile, Admin";
-    }
-    @GetMapping("/places/placesMain")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
-    public String getPlaces() {
-        return "Places";
-    }
-    @GetMapping("/categories/categoriesMain")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
-    public String getCategories() {
-        return "Categories";
-    }
-    @GetMapping("/groups/groupsMain")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
-    public String getGroups() {
-        return "Groups";
-    }
-    
+//
+//    @GetMapping("/user/userProfile")
+//    @PreAuthorize("hasAuthority('ROLE_USER')")
+//    public String userProfile(){
+//        return "WElcome to the profile, user";
+//    }
+////    @GetMapping("/admin/adminProfile")
+////    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+//    public String adminProfile(){
+//        return "Welcome to the profile, Admin";
+////    }
+//    @GetMapping("/places/placesMain")
+//    @PreAuthorize("hasAuthority('ROLE_USER')")
+//    public String getPlaces() {
+//        return "Places";
+//    }
+//    @GetMapping("/categories/categoriesMain")
+//    @PreAuthorize("hasAuthority('ROLE_USER')")
+//    public String getCategories() {
+//        return "Categories";
+//    }
+//    @GetMapping("/groups/groupsMain")
+//    @PreAuthorize("hasAuthority('ROLE_USER')")
+//    public String getGroups() {
+//        return "Groups";
+//    }
+//
     
 
     @PostMapping("/login")
